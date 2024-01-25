@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>bartpy.tree &mdash; BartPy 0.0.1 documentation</title>
+  <title>bartpy2.tree &mdash; bartpy2 0.0.1 documentation</title>
   
 
   
@@ -47,7 +47,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> BartPy
+            <a href="../../index.html" class="icon icon-home"> bartpy2
           
 
           
@@ -102,7 +102,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">BartPy</a>
+          <a href="../../index.html">bartpy2</a>
         
       </nav>
 
@@ -135,7 +135,7 @@
         
           <li><a href="../index.html">Module code</a> &raquo;</li>
         
-      <li>bartpy.tree</li>
+      <li>bartpy2.tree</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -150,16 +150,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for bartpy.tree</h1><div class="highlight"><pre>
+  <h1>Source code for bartpy2.tree</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">bartpy.mutation</span> <span class="k">import</span> <span class="n">TreeMutation</span>
-<span class="kn">from</span> <span class="nn">bartpy.node</span> <span class="k">import</span> <span class="n">TreeNode</span><span class="p">,</span> <span class="n">LeafNode</span><span class="p">,</span> <span class="n">DecisionNode</span>
+<span class="kn">from</span> <span class="nn">bartpy2.mutation</span> <span class="k">import</span> <span class="n">TreeMutation</span>
+<span class="kn">from</span> <span class="nn">bartpy2.node</span> <span class="k">import</span> <span class="n">TreeNode</span><span class="p">,</span> <span class="n">LeafNode</span><span class="p">,</span> <span class="n">DecisionNode</span>
 
 
-<div class="viewcode-block" id="Tree"><a class="viewcode-back" href="../../tree.html#bartpy.tree.Tree">[docs]</a><span class="k">class</span> <span class="nc">Tree</span><span class="p">:</span>
+<div class="viewcode-block" id="Tree"><a class="viewcode-back" href="../../tree.html#bartpy2.tree.Tree">[docs]</a><span class="k">class</span> <span class="nc">Tree</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    An encapsulation of the structure of a single decision tree</span>
 <span class="sd">    Contains no logic, but keeps track of 4 different kinds of nodes within the tree:</span>
@@ -217,7 +217,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">decision_nodes</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">is_prunable</span><span class="p">()]</span>
 
-<div class="viewcode-block" id="Tree.update_y"><a class="viewcode-back" href="../../tree.html#bartpy.tree.Tree.update_y">[docs]</a>    <span class="k">def</span> <span class="nf">update_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Tree.update_y"><a class="viewcode-back" href="../../tree.html#bartpy2.tree.Tree.update_y">[docs]</a>    <span class="k">def</span> <span class="nf">update_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update the cached value of the target array in all nodes</span>
 <span class="sd">        Used to pass in the residuals from the sum of all of the other trees</span>
@@ -226,7 +226,7 @@
         <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
             <span class="n">node</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="n">update_y</span><span class="p">(</span><span class="n">y</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Tree.predict"><a class="viewcode-back" href="../../tree.html#bartpy.tree.Tree.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="Tree.predict"><a class="viewcode-back" href="../../tree.html#bartpy2.tree.Tree.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a set of predictions with the same dimensionality as the target array</span>
 <span class="sd">        Note that the prediction is from one tree, so represents only (1 / number_of_trees) of the target</span>
@@ -238,7 +238,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">cache_up_to_date</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prediction</span></div>
 
-<div class="viewcode-block" id="Tree.out_of_sample_predict"><a class="viewcode-back" href="../../tree.html#bartpy.tree.Tree.out_of_sample_predict">[docs]</a>    <span class="k">def</span> <span class="nf">out_of_sample_predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="Tree.out_of_sample_predict"><a class="viewcode-back" href="../../tree.html#bartpy2.tree.Tree.out_of_sample_predict">[docs]</a>    <span class="k">def</span> <span class="nf">out_of_sample_predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Prediction for a covariate matrix not used for training</span>
 
@@ -257,14 +257,14 @@
             <span class="n">prediction</span><span class="p">[</span><span class="n">leaf</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="n">out_of_sample_condition</span><span class="p">(</span><span class="n">X</span><span class="p">)]</span> <span class="o">=</span> <span class="n">leaf</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">prediction</span></div>
 
-<div class="viewcode-block" id="Tree.remove_node"><a class="viewcode-back" href="../../tree.html#bartpy.tree.Tree.remove_node">[docs]</a>    <span class="k">def</span> <span class="nf">remove_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Tree.remove_node"><a class="viewcode-back" href="../../tree.html#bartpy2.tree.Tree.remove_node">[docs]</a>    <span class="k">def</span> <span class="nf">remove_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove a single node from the tree</span>
 <span class="sd">        Note that this is non-recursive, only drops the node and not any children</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">node</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Tree.add_node"><a class="viewcode-back" href="../../tree.html#bartpy.tree.Tree.add_node">[docs]</a>    <span class="k">def</span> <span class="nf">add_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Tree.add_node"><a class="viewcode-back" href="../../tree.html#bartpy2.tree.Tree.add_node">[docs]</a>    <span class="k">def</span> <span class="nf">add_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a node to the tree</span>
 <span class="sd">        Note that this is non-recursive, only adds the node and not any children</span>
@@ -272,7 +272,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="mutate"><a class="viewcode-back" href="../../tree.html#bartpy.tree.mutate">[docs]</a><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">tree</span><span class="p">:</span> <span class="n">Tree</span><span class="p">,</span> <span class="n">mutation</span><span class="p">:</span> <span class="n">TreeMutation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="mutate"><a class="viewcode-back" href="../../tree.html#bartpy2.tree.mutate">[docs]</a><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">tree</span><span class="p">:</span> <span class="n">Tree</span><span class="p">,</span> <span class="n">mutation</span><span class="p">:</span> <span class="n">TreeMutation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Apply a change to the structure of the tree</span>
 <span class="sd">    Modifies not only the tree, but also the links between the TreeNodes</span>

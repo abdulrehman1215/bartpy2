@@ -1,8 +1,8 @@
 import numpy as np
 
-from bartpy.model import Model
-from bartpy.node import LeafNode
-from bartpy.samplers.sampler import Sampler
+from bartpy2.model import Model
+from bartpy2.node import LeafNode
+from bartpy2.samplers.sampler import Sampler
 
 
 class LeafNodeSampler(Sampler):

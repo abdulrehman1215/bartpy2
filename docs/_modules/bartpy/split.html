@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>bartpy.split &mdash; BartPy 0.0.1 documentation</title>
+  <title>bartpy2.split &mdash; bartpy2 0.0.1 documentation</title>
   
 
   
@@ -47,7 +47,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> BartPy
+            <a href="../../index.html" class="icon icon-home"> bartpy2
           
 
           
@@ -102,7 +102,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">BartPy</a>
+          <a href="../../index.html">bartpy2</a>
         
       </nav>
 
@@ -135,7 +135,7 @@
         
           <li><a href="../index.html">Module code</a> &raquo;</li>
         
-      <li>bartpy.split</li>
+      <li>bartpy2.split</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -150,11 +150,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for bartpy.split</h1><div class="highlight"><pre>
+  <h1>Source code for bartpy2.split</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span> <span class="p">,</span><span class="n">Tuple</span>
 <span class="kn">from</span> <span class="nn">copy</span> <span class="k">import</span> <span class="n">deepcopy</span>
 
-<span class="kn">from</span> <span class="nn">bartpy.data</span> <span class="k">import</span> <span class="n">Data</span>
+<span class="kn">from</span> <span class="nn">bartpy2.data</span> <span class="k">import</span> <span class="n">Data</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -164,7 +164,7 @@
     <span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="n">bool_mask</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="SplitCondition"><a class="viewcode-back" href="../../split.html#bartpy.split.SplitCondition">[docs]</a><span class="k">class</span> <span class="nc">SplitCondition</span><span class="p">:</span>
+<div class="viewcode-block" id="SplitCondition"><a class="viewcode-back" href="../../split.html#bartpy2.split.SplitCondition">[docs]</a><span class="k">class</span> <span class="nc">SplitCondition</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A representation of a split in feature space.</span>
 <span class="sd">    The two main components are:</span>
@@ -185,7 +185,7 @@
     <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s1">&#39;SplitCondition&#39;</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">splitting_variable</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">splitting_variable</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">splitting_value</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">splitting_value</span>
 
-<div class="viewcode-block" id="SplitCondition.condition"><a class="viewcode-back" href="../../split.html#bartpy.split.SplitCondition.condition">[docs]</a>    <span class="k">def</span> <span class="nf">condition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">,</span> <span class="n">cached</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="SplitCondition.condition"><a class="viewcode-back" href="../../split.html#bartpy2.split.SplitCondition.condition">[docs]</a>    <span class="k">def</span> <span class="nf">condition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">,</span> <span class="n">cached</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a Bool array indicating which side of the split each row of `Data` should go</span>
 <span class="sd">        False =&gt; Left</span>
@@ -198,7 +198,7 @@
     <span class="k">def</span> <span class="nf">left_condition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">,</span> <span class="n">cached</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">return</span> <span class="o">~</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cached</span><span class="p">)</span>
 
-<div class="viewcode-block" id="SplitCondition.left"><a class="viewcode-back" href="../../split.html#bartpy.split.SplitCondition.left">[docs]</a>    <span class="k">def</span> <span class="nf">left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="s1">&#39;SplitCondition&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<div class="viewcode-block" id="SplitCondition.left"><a class="viewcode-back" href="../../split.html#bartpy2.split.SplitCondition.left">[docs]</a>    <span class="k">def</span> <span class="nf">left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="s1">&#39;SplitCondition&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a Bool array indicating whether each row should go into the left split.</span>
 <span class="sd">        Inverse of self.right</span>
@@ -207,7 +207,7 @@
         <span class="n">left_self</span><span class="o">.</span><span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_condition</span>
         <span class="k">return</span> <span class="n">left_self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_condition</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="SplitCondition.right"><a class="viewcode-back" href="../../split.html#bartpy.split.SplitCondition.right">[docs]</a>    <span class="k">def</span> <span class="nf">right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="s1">&#39;SplitCondition&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<div class="viewcode-block" id="SplitCondition.right"><a class="viewcode-back" href="../../split.html#bartpy2.split.SplitCondition.right">[docs]</a>    <span class="k">def</span> <span class="nf">right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="s1">&#39;SplitCondition&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a Bool array indicating whether each row should go into the left split.</span>
 <span class="sd">        Inverse of self.right</span>

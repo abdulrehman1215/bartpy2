@@ -1,7 +1,7 @@
 from abc import abstractmethod
 
-from bartpy.model import Model
-from bartpy.tree import Tree
+from bartpy2.model import Model
+from bartpy2.tree import Tree
 
 
 class Sampler:

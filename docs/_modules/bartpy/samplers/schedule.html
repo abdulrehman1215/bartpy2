@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>bartpy.samplers.schedule &mdash; BartPy 0.0.1 documentation</title>
+  <title>bartpy2.samplers.schedule &mdash; bartpy2 0.0.1 documentation</title>
   
 
   
@@ -47,7 +47,7 @@
           
 
           
-            <a href="../../../index.html" class="icon icon-home"> BartPy
+            <a href="../../../index.html" class="icon icon-home"> bartpy2
           
 
           
@@ -102,7 +102,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">BartPy</a>
+          <a href="../../../index.html">bartpy2</a>
         
       </nav>
 
@@ -135,7 +135,7 @@
         
           <li><a href="../../index.html">Module code</a> &raquo;</li>
         
-      <li>bartpy.samplers.schedule</li>
+      <li>bartpy2.samplers.schedule</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -150,16 +150,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for bartpy.samplers.schedule</h1><div class="highlight"><pre>
+  <h1>Source code for bartpy2.samplers.schedule</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Generator</span>
-<span class="kn">from</span> <span class="nn">bartpy.model</span> <span class="k">import</span> <span class="n">Model</span>
-<span class="kn">from</span> <span class="nn">bartpy.samplers.treemutation.treemutation</span> <span class="k">import</span> <span class="n">TreeMutationSampler</span>
-<span class="kn">from</span> <span class="nn">bartpy.samplers.leafnode</span> <span class="k">import</span> <span class="n">LeafNodeSampler</span>
-<span class="kn">from</span> <span class="nn">bartpy.samplers.sigma</span> <span class="k">import</span> <span class="n">SigmaSampler</span>
-<span class="kn">from</span> <span class="nn">bartpy.samplers.sampler</span> <span class="k">import</span> <span class="n">Sampler</span>
+<span class="kn">from</span> <span class="nn">bartpy2.model</span> <span class="k">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">bartpy2.samplers.treemutation.treemutation</span> <span class="k">import</span> <span class="n">TreeMutationSampler</span>
+<span class="kn">from</span> <span class="nn">bartpy2.samplers.leafnode</span> <span class="k">import</span> <span class="n">LeafNodeSampler</span>
+<span class="kn">from</span> <span class="nn">bartpy2.samplers.sigma</span> <span class="k">import</span> <span class="n">SigmaSampler</span>
+<span class="kn">from</span> <span class="nn">bartpy2.samplers.sampler</span> <span class="k">import</span> <span class="n">Sampler</span>
 
 
-<div class="viewcode-block" id="SampleSchedule"><a class="viewcode-back" href="../../../sampling.html#bartpy.samplers.schedule.SampleSchedule">[docs]</a><span class="k">class</span> <span class="nc">SampleSchedule</span><span class="p">:</span>
+<div class="viewcode-block" id="SampleSchedule"><a class="viewcode-back" href="../../../sampling.html#bartpy2.samplers.schedule.SampleSchedule">[docs]</a><span class="k">class</span> <span class="nc">SampleSchedule</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The SampleSchedule class is responsible for handling the ordering of sampling within a Gibbs step</span>
 <span class="sd">    It is useful to encapsulate this logic if we wish to expand the model</span>
@@ -182,7 +182,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">sigma_sampler</span> <span class="o">=</span> <span class="n">sigma_sampler</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tree_sampler</span> <span class="o">=</span> <span class="n">tree_sampler</span>
 
-<div class="viewcode-block" id="SampleSchedule.steps"><a class="viewcode-back" href="../../../sampling.html#bartpy.samplers.schedule.SampleSchedule.steps">[docs]</a>    <span class="k">def</span> <span class="nf">steps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Model</span><span class="p">],</span> <span class="n">Sampler</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<div class="viewcode-block" id="SampleSchedule.steps"><a class="viewcode-back" href="../../../sampling.html#bartpy2.samplers.schedule.SampleSchedule.steps">[docs]</a>    <span class="k">def</span> <span class="nf">steps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Model</span><span class="p">],</span> <span class="n">Sampler</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a generator of the steps that need to be called to complete a full Gibbs sample</span>
 

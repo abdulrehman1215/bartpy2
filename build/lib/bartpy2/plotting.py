@@ -1,4 +1,4 @@
-from bartpy.sklearnmodel import SklearnModel
+from bartpy2.sklearnmodel import SklearnModel
 
 from matplotlib import pyplot as plt
 

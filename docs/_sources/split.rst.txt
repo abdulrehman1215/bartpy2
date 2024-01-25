@@ -2,7 +2,7 @@
 Split
 =====
 
-.. automodule:: bartpy.split
+.. automodule:: bartpy2.split
    :members:
 
 

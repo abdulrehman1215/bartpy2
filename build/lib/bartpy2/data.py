@@ -4,7 +4,7 @@ from typing import Any, List
 import numpy as np
 import pandas as pd
 
-from bartpy.errors import NoSplittableVariableException
+from bartpy2.errors import NoSplittableVariableException
 
 
 SplitData = namedtuple("SplitData", ["left_data", "right_data"])

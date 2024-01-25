@@ -4,10 +4,10 @@ from typing import List, Generator
 import numpy as np
 import pandas as pd
 
-from bartpy.data import Data
-from bartpy.sigma import Sigma
-from bartpy.tree import Tree, LeafNode, deep_copy_tree
-from bartpy.split import Split
+from bartpy2.data import Data
+from bartpy2.sigma import Sigma
+from bartpy2.tree import Tree, LeafNode, deep_copy_tree
+from bartpy2.split import Split
 
 
 class Model:

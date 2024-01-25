@@ -4,9 +4,9 @@ from typing import List, Tuple
 import numpy as np
 from tqdm import tqdm
 
-from bartpy.model import Model, deep_copy_model
-from bartpy.samplers.schedule import SampleSchedule
-from bartpy.samplers.sampler import Sampler
+from bartpy2.model import Model, deep_copy_model
+from bartpy2.samplers.schedule import SampleSchedule
+from bartpy2.samplers.sampler import Sampler
 
 
 class ModelSampler(Sampler):

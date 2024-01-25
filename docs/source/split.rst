@@ -8,7 +8,7 @@ The `Split` class maintains all information about data for a `Node`.  In particu
  - provides easy access to the conditioned data
  - allows for updating of the target with the residuals from the other trees
 
-.. automodule:: bartpy.split
+.. automodule:: bartpy2.split
    :members:
 
 

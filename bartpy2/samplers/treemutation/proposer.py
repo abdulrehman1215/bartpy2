@@ -1,7 +1,7 @@
 from abc import abstractmethod
 
-from bartpy.mutation import TreeMutation
-from bartpy.tree import Tree
+from bartpy2.mutation import TreeMutation
+from bartpy2.tree import Tree
 
 
 class TreeMutationProposer:

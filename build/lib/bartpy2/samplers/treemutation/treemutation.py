@@ -2,12 +2,12 @@ from typing import Optional
 
 import numpy as np
 
-from bartpy.model import Model
-from bartpy.mutation import TreeMutation
-from bartpy.samplers.treemutation.proposer import TreeMutationProposer
-from bartpy.samplers.treemutation.likihoodratio import TreeMutationLikihoodRatio
-from bartpy.tree import Tree, mutate
-from bartpy.samplers.sampler import Sampler
+from bartpy2.model import Model
+from bartpy2.mutation import TreeMutation
+from bartpy2.samplers.treemutation.proposer import TreeMutationProposer
+from bartpy2.samplers.treemutation.likihoodratio import TreeMutationLikihoodRatio
+from bartpy2.tree import Tree, mutate
+from bartpy2.samplers.sampler import Sampler
 
 
 class TreeMutationSampler(Sampler):

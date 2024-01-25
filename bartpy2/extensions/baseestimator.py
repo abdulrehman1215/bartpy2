@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.base import RegressorMixin, clone
 from sklearn.linear_model.base import LinearRegression
 
-from bartpy.sklearnmodel import SklearnModel
+from bartpy2.sklearnmodel import SklearnModel
 
 
 class ResidualBART(SklearnModel):

@@ -2,8 +2,8 @@
 Tree
 ====
 
-.. automodule:: bartpy.tree
+.. automodule:: bartpy2.tree
    :members:
 
-.. automodule:: bartpy.mutation
+.. automodule:: bartpy2.mutation
    :members:

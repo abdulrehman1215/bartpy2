@@ -2,8 +2,8 @@ from typing import List
 
 import numpy as np
 
-from bartpy.mutation import TreeMutation
-from bartpy.node import TreeNode, LeafNode, DecisionNode, deep_copy_node
+from bartpy2.mutation import TreeMutation
+from bartpy2.node import TreeNode, LeafNode, DecisionNode, deep_copy_node
 
 
 class Tree:

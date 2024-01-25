@@ -1,8 +1,8 @@
 import numpy as np
 
-from bartpy.model import Model
-from bartpy.sigma import Sigma
-from bartpy.samplers.sampler import Sampler
+from bartpy2.model import Model
+from bartpy2.sigma import Sigma
+from bartpy2.samplers.sampler import Sampler
 
 
 class SigmaSampler(Sampler):

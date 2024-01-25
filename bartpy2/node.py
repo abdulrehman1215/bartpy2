@@ -2,8 +2,8 @@ from typing import Union, Tuple
 
 import numpy as np
 
-from bartpy.data import Data
-from bartpy.split import Split, SplitCondition
+from bartpy2.data import Data
+from bartpy2.split import Split, SplitCondition
 
 
 class TreeNode:

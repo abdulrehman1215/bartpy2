@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>bartpy.sklearnmodel &mdash; BartPy 0.0.1 documentation</title>
+  <title>bartpy2.sklearnmodel &mdash; bartpy2 0.0.1 documentation</title>
   
 
   
@@ -47,7 +47,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> BartPy
+            <a href="../../index.html" class="icon icon-home"> bartpy2
           
 
           
@@ -102,7 +102,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">BartPy</a>
+          <a href="../../index.html">bartpy2</a>
         
       </nav>
 
@@ -135,7 +135,7 @@
         
           <li><a href="../index.html">Module code</a> &raquo;</li>
         
-      <li>bartpy.sklearnmodel</li>
+      <li>bartpy2.sklearnmodel</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -150,28 +150,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for bartpy.sklearnmodel</h1><div class="highlight"><pre>
+  <h1>Source code for bartpy2.sklearnmodel</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="k">import</span> <span class="n">RegressorMixin</span><span class="p">,</span> <span class="n">BaseEstimator</span>
 
-<span class="kn">from</span> <span class="nn">bartpy.model</span> <span class="k">import</span> <span class="n">Model</span>
-<span class="kn">from</span> <span class="nn">bartpy.data</span> <span class="k">import</span> <span class="n">Data</span>
-<span class="kn">from</span> <span class="nn">bartpy.samplers.schedule</span> <span class="k">import</span> <span class="n">SampleSchedule</span>
-<span class="kn">from</span> <span class="nn">bartpy.samplers.modelsampler</span> <span class="k">import</span> <span class="n">ModelSampler</span>
-<span class="kn">from</span> <span class="nn">bartpy.sigma</span> <span class="k">import</span> <span class="n">Sigma</span>
-<span class="kn">from</span> <span class="nn">bartpy.samplers.treemutation.uniform.likihoodratio</span> <span class="k">import</span> <span class="n">UniformTreeMutationLikihoodRatio</span>
-<span class="kn">from</span> <span class="nn">bartpy.samplers.treemutation.uniform.proposer</span> <span class="k">import</span> <span class="n">UniformMutationProposer</span>
-<span class="kn">from</span> <span class="nn">bartpy.samplers.treemutation.treemutation</span> <span class="k">import</span> <span class="n">TreeMutationSampler</span>
-<span class="kn">from</span> <span class="nn">bartpy.samplers.sigma</span> <span class="k">import</span> <span class="n">SigmaSampler</span>
-<span class="kn">from</span> <span class="nn">bartpy.samplers.leafnode</span> <span class="k">import</span> <span class="n">LeafNodeSampler</span>
+<span class="kn">from</span> <span class="nn">bartpy2.model</span> <span class="k">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">bartpy2.data</span> <span class="k">import</span> <span class="n">Data</span>
+<span class="kn">from</span> <span class="nn">bartpy2.samplers.schedule</span> <span class="k">import</span> <span class="n">SampleSchedule</span>
+<span class="kn">from</span> <span class="nn">bartpy2.samplers.modelsampler</span> <span class="k">import</span> <span class="n">ModelSampler</span>
+<span class="kn">from</span> <span class="nn">bartpy2.sigma</span> <span class="k">import</span> <span class="n">Sigma</span>
+<span class="kn">from</span> <span class="nn">bartpy2.samplers.treemutation.uniform.likihoodratio</span> <span class="k">import</span> <span class="n">UniformTreeMutationLikihoodRatio</span>
+<span class="kn">from</span> <span class="nn">bartpy2.samplers.treemutation.uniform.proposer</span> <span class="k">import</span> <span class="n">UniformMutationProposer</span>
+<span class="kn">from</span> <span class="nn">bartpy2.samplers.treemutation.treemutation</span> <span class="k">import</span> <span class="n">TreeMutationSampler</span>
+<span class="kn">from</span> <span class="nn">bartpy2.samplers.sigma</span> <span class="k">import</span> <span class="n">SigmaSampler</span>
+<span class="kn">from</span> <span class="nn">bartpy2.samplers.leafnode</span> <span class="k">import</span> <span class="n">LeafNodeSampler</span>
 
 
-<div class="viewcode-block" id="SklearnModel"><a class="viewcode-back" href="../../model.html#bartpy.sklearnmodel.SklearnModel">[docs]</a><span class="k">class</span> <span class="nc">SklearnModel</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">RegressorMixin</span><span class="p">):</span>
+<div class="viewcode-block" id="SklearnModel"><a class="viewcode-back" href="../../model.html#bartpy2.sklearnmodel.SklearnModel">[docs]</a><span class="k">class</span> <span class="nc">SklearnModel</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">RegressorMixin</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The main access point to building BART models in BartPy</span>
+<span class="sd">    The main access point to building BART models in bartpy2</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -216,7 +216,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">beta</span> <span class="o">=</span> <span class="n">beta</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">proposer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">likihood_ratio</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prediction_samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model_samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="mi">9</span>
 
-<div class="viewcode-block" id="SklearnModel.fit"><a class="viewcode-back" href="../../model.html#bartpy.sklearnmodel.SklearnModel.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;SklearnModel&#39;</span><span class="p">:</span>
+<div class="viewcode-block" id="SklearnModel.fit"><a class="viewcode-back" href="../../model.html#bartpy2.sklearnmodel.SklearnModel.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;SklearnModel&#39;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Learn the model based on training data</span>
 
@@ -244,7 +244,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_model_samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prediction_samples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">samples</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_burn</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="SklearnModel.predict"><a class="viewcode-back" href="../../model.html#bartpy.sklearnmodel.SklearnModel.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SklearnModel.predict"><a class="viewcode-back" href="../../model.html#bartpy2.sklearnmodel.SklearnModel.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Predict the target corresponding to the provided covariate matrix</span>
 <span class="sd">        If X is None, will predict based on training covariates</span>

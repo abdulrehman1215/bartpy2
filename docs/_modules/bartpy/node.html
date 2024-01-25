@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>bartpy.node &mdash; BartPy 0.0.1 documentation</title>
+  <title>bartpy2.node &mdash; bartpy2 0.0.1 documentation</title>
   
 
   
@@ -47,7 +47,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> BartPy
+            <a href="../../index.html" class="icon icon-home"> bartpy2
           
 
           
@@ -102,7 +102,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">BartPy</a>
+          <a href="../../index.html">bartpy2</a>
         
       </nav>
 
@@ -135,7 +135,7 @@
         
           <li><a href="../index.html">Module code</a> &raquo;</li>
         
-      <li>bartpy.node</li>
+      <li>bartpy2.node</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -150,16 +150,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for bartpy.node</h1><div class="highlight"><pre>
+  <h1>Source code for bartpy2.node</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Union</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">bartpy.data</span> <span class="k">import</span> <span class="n">Data</span>
-<span class="kn">from</span> <span class="nn">bartpy.split</span> <span class="k">import</span> <span class="n">Split</span><span class="p">,</span> <span class="n">SplitCondition</span>
+<span class="kn">from</span> <span class="nn">bartpy2.data</span> <span class="k">import</span> <span class="n">Data</span>
+<span class="kn">from</span> <span class="nn">bartpy2.split</span> <span class="k">import</span> <span class="n">Split</span><span class="p">,</span> <span class="n">SplitCondition</span>
 
 
-<div class="viewcode-block" id="TreeNode"><a class="viewcode-back" href="../../node.html#bartpy.node.TreeNode">[docs]</a><span class="k">class</span> <span class="nc">TreeNode</span><span class="p">:</span>
+<div class="viewcode-block" id="TreeNode"><a class="viewcode-back" href="../../node.html#bartpy2.node.TreeNode">[docs]</a><span class="k">class</span> <span class="nc">TreeNode</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A representation of a node in the Tree</span>
 <span class="sd">    Contains two main types of information:</span>
@@ -204,7 +204,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">right_child</span><span class="o">.</span><span class="n">update_y</span><span class="p">(</span><span class="n">y</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="LeafNode"><a class="viewcode-back" href="../../node.html#bartpy.node.LeafNode">[docs]</a><span class="k">class</span> <span class="nc">LeafNode</span><span class="p">(</span><span class="n">TreeNode</span><span class="p">):</span>
+<div class="viewcode-block" id="LeafNode"><a class="viewcode-back" href="../../node.html#bartpy2.node.LeafNode">[docs]</a><span class="k">class</span> <span class="nc">LeafNode</span><span class="p">(</span><span class="n">TreeNode</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A representation of a leaf node in the tree</span>
 <span class="sd">    In addition to the normal work of a `Node`, a `LeafNode` is responsible for:</span>
@@ -244,7 +244,7 @@
         <span class="k">return</span> <span class="kc">True</span></div>
 
 
-<div class="viewcode-block" id="DecisionNode"><a class="viewcode-back" href="../../node.html#bartpy.node.DecisionNode">[docs]</a><span class="k">class</span> <span class="nc">DecisionNode</span><span class="p">(</span><span class="n">TreeNode</span><span class="p">):</span>
+<div class="viewcode-block" id="DecisionNode"><a class="viewcode-back" href="../../node.html#bartpy2.node.DecisionNode">[docs]</a><span class="k">class</span> <span class="nc">DecisionNode</span><span class="p">(</span><span class="n">TreeNode</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A `DecisionNode` encapsulates internal node in the tree</span>
 <span class="sd">    Unlike a `LeafNode`, it contains very little actual logic beyond tying the tree together</span>
@@ -263,7 +263,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_child</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="n">most_recent_split_condition</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="split_node"><a class="viewcode-back" href="../../node.html#bartpy.node.split_node">[docs]</a><span class="k">def</span> <span class="nf">split_node</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">LeafNode</span><span class="p">,</span> <span class="n">split_condition</span><span class="p">:</span> <span class="n">SplitCondition</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DecisionNode</span><span class="p">:</span>
+<div class="viewcode-block" id="split_node"><a class="viewcode-back" href="../../node.html#bartpy2.node.split_node">[docs]</a><span class="k">def</span> <span class="nf">split_node</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">LeafNode</span><span class="p">,</span> <span class="n">split_condition</span><span class="p">:</span> <span class="n">SplitCondition</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DecisionNode</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts a `LeafNode` into an internal `DecisionNode` by applying the split condition</span>
 <span class="sd">    The left node contains all values for the splitting variable less than the splitting value</span>

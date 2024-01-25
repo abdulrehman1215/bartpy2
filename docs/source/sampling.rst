@@ -2,7 +2,7 @@
 Samplers
 ========
 
-At the core, BartPy's sampling is a Gibbs sampler in which each step looks like:
+At the core, bartpy2's sampling is a Gibbs sampler in which each step looks like:
 
 For each tree:
    Sample a mutation to the tree
@@ -18,13 +18,13 @@ This means that we need to be able to do three types of sampling:
 
 This is all coordinated by a the SampleSchedule class
 
-.. autoclass:: bartpy.samplers.schedule.SampleSchedule
+.. autoclass:: bartpy2.samplers.schedule.SampleSchedule
    :members:
 
 Sampling Tree Space
 -------------------
 
-Each sample of tree space in BartPy works by:
+Each sample of tree space in bartpy2 works by:
 
  1. Generate a mutation proposal through some method
  2. Calculate the ratio of the likihood of the mutation over the likihood of the reverse operation
@@ -45,9 +45,9 @@ By default:
  - Grow or Prune is chosen with probability (0.5, 0.5)
  - Particular instances of growing or pruning are chosen uniformly from all possible grows or prunes
 
-It is possible to modify all of this behaviour using BartPy, but doing so requires some involved modification of the likihood functions.
+It is possible to modify all of this behaviour using bartpy2, but doing so requires some involved modification of the likihood functions.
 
-.. autoclass:: bartpy.samplers.treemutation.proposer.TreeMutationProposer
+.. autoclass:: bartpy2.samplers.treemutation.proposer.TreeMutationProposer
    :members:
 
 
@@ -69,7 +69,7 @@ In fact, it is as simple as sampling from a normal distribution with:
  - prior given by the model
  - observations as those data points that fall into the leaf's split condition
 
-.. autoclass:: bartpy.samplers.leafnode.LeafNodeSampler
+.. autoclass:: bartpy2.samplers.leafnode.LeafNodeSampler
    :members:
 
 Sampling Sigma Values
@@ -77,5 +77,5 @@ Sampling Sigma Values
 
 Sampling sigma proceeds as normal for a regression.  From the point of view of the sigma conditional, there is no difference between the BART predictions, and a standard OLS model
 
-.. autoclass:: bartpy.samplers.sigma.SigmaSampler
+.. autoclass:: bartpy2.samplers.sigma.SigmaSampler
    :members:

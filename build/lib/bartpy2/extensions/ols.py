@@ -3,7 +3,7 @@ from typing import Type
 import numpy as np
 import pandas as pd
 
-from bartpy.sklearnmodel import SklearnModel
+from bartpy2.sklearnmodel import SklearnModel
 
 
 class OLS(SklearnModel):

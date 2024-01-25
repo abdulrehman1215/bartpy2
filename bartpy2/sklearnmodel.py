@@ -5,21 +5,21 @@ import numpy as np
 import pandas as pd
 from sklearn.base import RegressorMixin, BaseEstimator
 
-from bartpy.model import Model
-from bartpy.data import Data
-from bartpy.samplers.schedule import SampleSchedule
-from bartpy.samplers.modelsampler import ModelSampler
-from bartpy.sigma import Sigma
-from bartpy.samplers.treemutation.uniform.likihoodratio import UniformTreeMutationLikihoodRatio
-from bartpy.samplers.treemutation.uniform.proposer import UniformMutationProposer
-from bartpy.samplers.treemutation.treemutation import TreeMutationSampler
-from bartpy.samplers.sigma import SigmaSampler
-from bartpy.samplers.leafnode import LeafNodeSampler
+from bartpy2.model import Model
+from bartpy2.data import Data
+from bartpy2.samplers.schedule import SampleSchedule
+from bartpy2.samplers.modelsampler import ModelSampler
+from bartpy2.sigma import Sigma
+from bartpy2.samplers.treemutation.uniform.likihoodratio import UniformTreeMutationLikihoodRatio
+from bartpy2.samplers.treemutation.uniform.proposer import UniformMutationProposer
+from bartpy2.samplers.treemutation.treemutation import TreeMutationSampler
+from bartpy2.samplers.sigma import SigmaSampler
+from bartpy2.samplers.leafnode import LeafNodeSampler
 
 
 class SklearnModel(BaseEstimator, RegressorMixin):
     """
-    The main access point to building BART models in BartPy
+    The main access point to building BART models in bartpy2
 
     Parameters
     ----------

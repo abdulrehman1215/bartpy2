@@ -4,7 +4,7 @@ from typing import List, Tuple
 from matplotlib import pyplot as plt
 import numpy as np
 
-from bartpy.model import Model
+from bartpy2.model import Model
 
 
 def feature_split_proportions_counter(model_samples: List[Model]) -> Tuple[int, Counter]:

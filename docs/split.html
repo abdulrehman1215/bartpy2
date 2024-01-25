@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Split &mdash; BartPy 0.0.1 documentation</title>
+  <title>Split &mdash; bartpy2 0.0.1 documentation</title>
   
 
   
@@ -49,7 +49,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> BartPy
+            <a href="index.html" class="icon icon-home"> bartpy2
           
 
           
@@ -104,7 +104,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">BartPy</a>
+          <a href="index.html">bartpy2</a>
         
       </nav>
 
@@ -154,11 +154,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-bartpy.split">
-<span id="split"></span><h1>Split<a class="headerlink" href="#module-bartpy.split" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-bartpy2.split">
+<span id="split"></span><h1>Split<a class="headerlink" href="#module-bartpy2.split" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="bartpy.split.SplitCondition">
-<em class="property">class </em><code class="descclassname">bartpy.split.</code><code class="descname">SplitCondition</code><span class="sig-paren">(</span><em>splitting_variable: str</em>, <em>splitting_value: float</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bartpy/split.html#SplitCondition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bartpy.split.SplitCondition" title="Permalink to this definition">¶</a></dt>
+<dt id="bartpy2.split.SplitCondition">
+<em class="property">class </em><code class="descclassname">bartpy2.split.</code><code class="descname">SplitCondition</code><span class="sig-paren">(</span><em>splitting_variable: str</em>, <em>splitting_value: float</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bartpy2/split.html#SplitCondition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bartpy2.split.SplitCondition" title="Permalink to this definition">¶</a></dt>
 <dd><p>A representation of a split in feature space.
 The two main components are:</p>
 <blockquote>
@@ -172,23 +172,23 @@ The two main components are:</p>
 </ul>
 </div></blockquote>
 <dl class="method">
-<dt id="bartpy.split.SplitCondition.condition">
-<code class="descname">condition</code><span class="sig-paren">(</span><em>data: bartpy.data.Data</em>, <em>cached=True</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="reference internal" href="_modules/bartpy/split.html#SplitCondition.condition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bartpy.split.SplitCondition.condition" title="Permalink to this definition">¶</a></dt>
+<dt id="bartpy2.split.SplitCondition.condition">
+<code class="descname">condition</code><span class="sig-paren">(</span><em>data: bartpy2.data.Data</em>, <em>cached=True</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="reference internal" href="_modules/bartpy2/split.html#SplitCondition.condition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bartpy2.split.SplitCondition.condition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Bool array indicating which side of the split each row of <cite>Data</cite> should go
 False =&gt; Left
 True =&gt; Right</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="bartpy.split.SplitCondition.left">
-<code class="descname">left</code><span class="sig-paren">(</span><em>data: bartpy.data.Data</em><span class="sig-paren">)</span> &#x2192; typing.Tuple[_ForwardRef('SplitCondition'), numpy.ndarray]<a class="reference internal" href="_modules/bartpy/split.html#SplitCondition.left"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bartpy.split.SplitCondition.left" title="Permalink to this definition">¶</a></dt>
+<dt id="bartpy2.split.SplitCondition.left">
+<code class="descname">left</code><span class="sig-paren">(</span><em>data: bartpy2.data.Data</em><span class="sig-paren">)</span> &#x2192; typing.Tuple[_ForwardRef('SplitCondition'), numpy.ndarray]<a class="reference internal" href="_modules/bartpy2/split.html#SplitCondition.left"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bartpy2.split.SplitCondition.left" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Bool array indicating whether each row should go into the left split.
 Inverse of self.right</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="bartpy.split.SplitCondition.right">
-<code class="descname">right</code><span class="sig-paren">(</span><em>data: bartpy.data.Data</em><span class="sig-paren">)</span> &#x2192; typing.Tuple[_ForwardRef('SplitCondition'), numpy.ndarray]<a class="reference internal" href="_modules/bartpy/split.html#SplitCondition.right"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bartpy.split.SplitCondition.right" title="Permalink to this definition">¶</a></dt>
+<dt id="bartpy2.split.SplitCondition.right">
+<code class="descname">right</code><span class="sig-paren">(</span><em>data: bartpy2.data.Data</em><span class="sig-paren">)</span> &#x2192; typing.Tuple[_ForwardRef('SplitCondition'), numpy.ndarray]<a class="reference internal" href="_modules/bartpy2/split.html#SplitCondition.right"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bartpy2.split.SplitCondition.right" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Bool array indicating whether each row should go into the left split.
 Inverse of self.right</p>
 </dd></dl>

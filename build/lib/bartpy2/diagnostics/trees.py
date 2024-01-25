@@ -3,7 +3,7 @@ from typing import List
 from matplotlib import pyplot as plt
 import numpy as np
 
-from bartpy.model import Model
+from bartpy2.model import Model
 
 
 def plot_tree_depth(model_samples: List[Model]):

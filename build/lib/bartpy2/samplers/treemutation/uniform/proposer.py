@@ -3,12 +3,12 @@ from operator import le, gt
 
 import numpy as np
 
-from bartpy.errors import NoSplittableVariableException, NoPrunableNodeException
-from bartpy.mutation import TreeMutation, GrowMutation, PruneMutation
-from bartpy.node import LeafNode, DecisionNode, split_node
-from bartpy.samplers.treemutation.proposer import TreeMutationProposer
-from bartpy.split import SplitCondition
-from bartpy.tree import Tree
+from bartpy2.errors import NoSplittableVariableException, NoPrunableNodeException
+from bartpy2.mutation import TreeMutation, GrowMutation, PruneMutation
+from bartpy2.node import LeafNode, DecisionNode, split_node
+from bartpy2.samplers.treemutation.proposer import TreeMutationProposer
+from bartpy2.split import SplitCondition
+from bartpy2.tree import Tree
 
 
 def uniformly_sample_grow_mutation(tree: Tree) -> TreeMutation:

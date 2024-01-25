@@ -2,7 +2,7 @@
 Model
 =====
 
-The default API for a BartPy model follows the common sklearn API. In particular, it implements:
+The default API for a bartpy2 model follows the common sklearn API. In particular, it implements:
 
  - fit
  - predict
@@ -12,7 +12,7 @@ For example, if we just want to train the model using default parameters, we can
 
 .. code-block:: python
 
-  from bartpy.sklearnmodel import SklearnModel
+  from bartpy2.sklearnmodel import SklearnModel
   model = SklearnModel
   model.fit(X_train, y_train)
   prediction = model.predict(y_test)
@@ -21,7 +21,7 @@ The default parameters are designed to be suitable for a wide range of data, but
 These parameters can be cross_validated and optimized through grid search in the normal sklearn way
 
 
-.. automodule:: bartpy.sklearnmodel
+.. automodule:: bartpy2.sklearnmodel
    :members:
 
 

@@ -2,7 +2,7 @@ from copy import deepcopy
 from typing import List, Optional, Union
 from operator import le, gt
 
-from bartpy.data import Data
+from bartpy2.data import Data
 
 import numpy as np
 

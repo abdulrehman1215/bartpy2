@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>bartpy.samplers.leafnode &mdash; BartPy 0.0.1 documentation</title>
+  <title>bartpy2.samplers.leafnode &mdash; bartpy2 0.0.1 documentation</title>
   
 
   
@@ -47,7 +47,7 @@
           
 
           
-            <a href="../../../index.html" class="icon icon-home"> BartPy
+            <a href="../../../index.html" class="icon icon-home"> bartpy2
           
 
           
@@ -102,7 +102,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">BartPy</a>
+          <a href="../../../index.html">bartpy2</a>
         
       </nav>
 
@@ -135,7 +135,7 @@
         
           <li><a href="../../index.html">Module code</a> &raquo;</li>
         
-      <li>bartpy.samplers.leafnode</li>
+      <li>bartpy2.samplers.leafnode</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -150,15 +150,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for bartpy.samplers.leafnode</h1><div class="highlight"><pre>
+  <h1>Source code for bartpy2.samplers.leafnode</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">bartpy.model</span> <span class="k">import</span> <span class="n">Model</span>
-<span class="kn">from</span> <span class="nn">bartpy.node</span> <span class="k">import</span> <span class="n">LeafNode</span>
-<span class="kn">from</span> <span class="nn">bartpy.samplers.sampler</span> <span class="k">import</span> <span class="n">Sampler</span>
+<span class="kn">from</span> <span class="nn">bartpy2.model</span> <span class="k">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">bartpy2.node</span> <span class="k">import</span> <span class="n">LeafNode</span>
+<span class="kn">from</span> <span class="nn">bartpy2.samplers.sampler</span> <span class="k">import</span> <span class="n">Sampler</span>
 
 
-<div class="viewcode-block" id="LeafNodeSampler"><a class="viewcode-back" href="../../../sampling.html#bartpy.samplers.leafnode.LeafNodeSampler">[docs]</a><span class="k">class</span> <span class="nc">LeafNodeSampler</span><span class="p">(</span><span class="n">Sampler</span><span class="p">):</span>
+<div class="viewcode-block" id="LeafNodeSampler"><a class="viewcode-back" href="../../../sampling.html#bartpy2.samplers.leafnode.LeafNodeSampler">[docs]</a><span class="k">class</span> <span class="nc">LeafNodeSampler</span><span class="p">(</span><span class="n">Sampler</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">LeafNode</span><span class="p">):</span>
         <span class="n">node</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">node</span><span class="p">))</span>
