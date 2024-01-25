@@ -5,11 +5,11 @@ from operator import le, gt
 import pandas as pd
 import numpy as np
 
-from bartpy.data import Data
-from bartpy.mutation import TreeMutation, PruneMutation
-from bartpy.node import split_node, LeafNode, DecisionNode
-from bartpy.tree import mutate, Tree
-from bartpy.split import Split, SplitCondition
+from bartpy2.data import Data
+from bartpy2.mutation import TreeMutation, PruneMutation
+from bartpy2.node import split_node, LeafNode, DecisionNode
+from bartpy2.tree import mutate, Tree
+from bartpy2.split import Split, SplitCondition
 
 
 class TestTreeStructureNodeRetrieval(TestCase):

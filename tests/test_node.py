@@ -3,11 +3,11 @@ import unittest
 import pandas as pd
 import numpy as np
 
-from bartpy.data import Data
+from bartpy2.data import Data
 
-from bartpy.mutation import GrowMutation, PruneMutation
-from bartpy.node import DecisionNode, LeafNode
-from bartpy.split import Split
+from bartpy2.mutation import GrowMutation, PruneMutation
+from bartpy2.node import DecisionNode, LeafNode
+from bartpy2.split import Split
 
 class TestNode(unittest.TestCase):
 

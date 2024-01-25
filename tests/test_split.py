@@ -4,8 +4,8 @@ import unittest
 import pandas as pd
 import numpy as np
 
-from bartpy.data import Data
-from bartpy.split import SplitCondition, Split, CombinedVariableCondition, CombinedCondition
+from bartpy2.data import Data
+from bartpy2.split import SplitCondition, Split, CombinedVariableCondition, CombinedCondition
 
 
 class TestSplit(unittest.TestCase):

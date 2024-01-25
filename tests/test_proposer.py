@@ -1,9 +1,9 @@
 import unittest
 
-from bartpy.data import Data
-from bartpy.samplers.treemutation.uniform.proposer import uniformly_sample_grow_mutation, uniformly_sample_prune_mutation
-from bartpy.split import Split
-from bartpy.tree import LeafNode, Tree, DecisionNode
+from bartpy2.data import Data
+from bartpy2.samplers.treemutation.uniform.proposer import uniformly_sample_grow_mutation, uniformly_sample_prune_mutation
+from bartpy2.split import Split
+from bartpy2.tree import LeafNode, Tree, DecisionNode
 
 import pandas as pd
 import numpy as np

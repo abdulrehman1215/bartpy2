@@ -3,8 +3,8 @@ import unittest
 import pandas as pd
 import numpy as np
 
-from bartpy.data import Data, is_not_constant
-from bartpy.errors import NoSplittableVariableException
+from bartpy2.data import Data, is_not_constant
+from bartpy2.errors import NoSplittableVariableException
 
 
 class TestData(unittest.TestCase):
