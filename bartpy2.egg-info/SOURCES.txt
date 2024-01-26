@@ -1,4 +1,5 @@
 LICENSE
+README.md
 setup.py
 bartpy2/__init__.py
 bartpy2/data.py
