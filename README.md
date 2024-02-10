@@ -1,7 +1,15 @@
 # bartpy2
+### Implementation Credits
 
-[![Build Status](https://travis-ci.org/JakeColtman/bartpy2.svg?branch=master)](https://travis-ci.org/JakeColtman/bartpy2)
+This package was initially created by Jack Coltman. Due to outdated libraries, the package needed to be updated so I have only fixed the bugs. The original maintainer could not be reached nor was he responding to any of the awaited Pull Requests. For any concerns feel free to reach me out on my linkedIn at:
 
+[Abdul Rehman Raja's LinkedIn Profile](https://www.linkedin.com/in/abdul-rehman-raja-ba9711192/)
+
+For Original Package and Repository:
+
+[Oringinal Package](https://pypi.org/project/bartpy/)
+
+[Original Repository](https://github.com/JakeColtman/bartpy)
 ### Introduction
 
 bartpy2 is a pure python implementation of the Bayesian additive regressions trees model of Chipman et al [1].
